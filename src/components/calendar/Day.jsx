@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Grid } from "@mui/material";
-import { useDay } from "../hooks/useDay";
+import { useDay } from "../../hooks/useDay";
 
 export const Day = ({ day, month, year, disabledDates }) => {
   const {
