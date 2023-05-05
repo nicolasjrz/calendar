@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
 import { Grid } from "@mui/material";
-import { useDay } from "../../hooks/useDay";
+import { useDate } from "../../hooks/useDate";
 
-export const Day = ({ day, month, year, disabledDates }) => {
+export const Day = ({ day, month, year, disabledDates = [] }) => {
   const {
     dateFormat,
     isTodayDate,
@@ -11,7 +11,7 @@ export const Day = ({ day, month, year, disabledDates }) => {
     isPastDay,
     buttonDisabled,
     isDisabledDate,
-  } = useDay(day, month, year, disabledDates);
+  } = useDate(day, month, year, disabledDates);
 
   const handleClickDate = (fecha) => {
     console.log(fecha);

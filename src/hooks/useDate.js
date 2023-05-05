@@ -8,8 +8,8 @@ import {
   setYear,
 } from "date-fns";
 
-export const useDay = ({ day, month, year, disabledDates = [] }) => {
-  const date = setDate(setMonth(setYear(new Date(), year), month - 1), day);
+export const useDate = (day, mes, anio, disabledDates = []) => {
+  const date = setDate(setMonth(setYear(new Date(), anio), mes - 1), day);
   const dateFormat = format(date, "dd/MM/yyyy");
 
   const isTodayDate = isSameDay(date, new Date());

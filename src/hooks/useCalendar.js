@@ -6,7 +6,7 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 
-export const useCalendar = ({ currentDate, onChange }) => {
+export const useCalendar = (currentDate, onChange) => {
   const startDate = startOfMonth(currentDate);
   const endDate = endOfMonth(currentDate);
   const dayInit = startDate.getDay();
