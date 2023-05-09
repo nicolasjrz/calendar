@@ -7,11 +7,15 @@ import {
   MonthDays,
   WeekdaysBar,
 } from "../components";
+import { useState } from "react";
 
 export const Calendar = ({ currentDate = new Date(), onChange }) => {
+  const [cantMonth] = useState(1);
+
   const { dayInit, dayRestant, allDays, prevMonth, nextMonth } = useCalendar(
     currentDate,
-    onChange
+    onChange,
+    cantMonth
   );
 
   return (
