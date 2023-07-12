@@ -12,6 +12,8 @@ import {
 export const useCalendar = (currentDate, onChange, cantMonth) => {
   const todayDate = new Date();
 
+ 
+
   const startDate = startOfMonth(currentDate);
   const endDate = endOfMonth(currentDate);
   const dayInit = startDate.getDay();
@@ -41,5 +43,12 @@ export const useCalendar = (currentDate, onChange, cantMonth) => {
     onChange(newDate);
   };
 
-  return { dayInit, dayRestant, allDays, prevMonth, nextMonth };
+  return {
+    dayInit,
+    dayRestant,
+    allDays,
+    prevMonth,
+    nextMonth,
+   
+  };
 };

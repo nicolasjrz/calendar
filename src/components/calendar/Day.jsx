@@ -11,10 +11,11 @@ export const Day = ({ day, month, year, disabledDates = [] }) => {
     isPastDay,
     buttonDisabled,
     isDisabledDate,
+    isDiaSeleccionado,
   } = useDate(day, month, year, disabledDates);
 
   const handleClickDate = (fecha) => {
-    console.log(fecha);
+    console.log({ fecha });
   };
 
   return (
@@ -39,9 +40,12 @@ export const Day = ({ day, month, year, disabledDates = [] }) => {
             ? "#e0dcdc"
             : isWeekendDate
             ? "#f5b5bc"
-            : isDisabledDate // Si es una fecha deshabilitada, se aplica el color verde
+            : isDisabledDate
             ? "#b3ffb3"
+            : isDiaSeleccionado
+            ? "green"
             : "#b5cef5",
+
           fontWeight: isTodayDate ? "bold" : "normal",
         }}
         onClick={() => handleClickDate(dateFormat)}

@@ -5,6 +5,7 @@ import { Calendar } from "./calendar/Calendar";
 
 export const App = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+
   return (
     <Box
       sx={{
