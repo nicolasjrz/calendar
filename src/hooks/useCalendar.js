@@ -12,8 +12,6 @@ import {
 export const useCalendar = (currentDate, onChange, cantMonth) => {
   const todayDate = new Date();
 
- 
-
   const startDate = startOfMonth(currentDate);
   const endDate = endOfMonth(currentDate);
   const dayInit = startDate.getDay();
@@ -24,6 +22,8 @@ export const useCalendar = (currentDate, onChange, cantMonth) => {
     const newDate = sub(currentDate, { months: 1 });
     const esAnterior = isBefore(todayDate, newDate);
     const esMismoMes = isSameMonth(todayDate, newDate);
+
+    console.log({ todayDate });
 
     if (esMismoMes) {
       onChange(todayDate);
@@ -49,6 +49,5 @@ export const useCalendar = (currentDate, onChange, cantMonth) => {
     allDays,
     prevMonth,
     nextMonth,
-   
   };
 };

@@ -2,10 +2,11 @@
 
 import { Grid } from "@mui/material";
 import { useDate } from "../../hooks/useDate";
+import { useDateStore } from "../../hooks/useDateStore";
 
 export const Day = ({ day, month, year, disabledDates = [] }) => {
   const {
-    dateFormat,
+    date,
     isTodayDate,
     isWeekendDate,
     isPastDay,
@@ -14,8 +15,11 @@ export const Day = ({ day, month, year, disabledDates = [] }) => {
     isDiaSeleccionado,
   } = useDate(day, month, year, disabledDates);
 
+  const { startSelectDate } = useDateStore();
+
   const handleClickDate = (fecha) => {
     console.log({ fecha });
+    startSelectDate(fecha);
   };
 
   return (
@@ -48,7 +52,7 @@ export const Day = ({ day, month, year, disabledDates = [] }) => {
 
           fontWeight: isTodayDate ? "bold" : "normal",
         }}
-        onClick={() => handleClickDate(dateFormat)}
+        onClick={() => handleClickDate(date)}
         component={"button"}
         disabled={buttonDisabled}
       >

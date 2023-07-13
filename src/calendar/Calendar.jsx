@@ -9,7 +9,7 @@ import {
 } from "../components";
 import { useState } from "react";
 
-export const Calendar = ({ currentDate = new Date(), onChange }) => {
+export const Calendar = ({ currentDate, onChange }) => {
   const [cantMonth] = useState(1);
 
   const { dayInit, dayRestant, allDays, prevMonth, nextMonth } = useCalendar(
